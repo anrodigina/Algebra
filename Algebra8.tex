@@ -1,0 +1,73 @@
+\documentclass{article}     
+\usepackage[utf8]{inputenc} 
+\usepackage{amsfonts}
+\usepackage[left=4cm,right=4cm,
+    top=3cm,bottom=4cm,bindingoffset=0cm]{geometry}
+\sloppy
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\title{Домашнее задание по алгебре}  
+\author{Родигина Анастасия, 167 группа}     
+\date{7 мая  2017}   
+
+\usepackage{graphicx}
+\graphicspath{{pictures/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\newcommand{\ip}[2]{(#1, #2)}
+                             
+\begin{document}            
+
+\maketitle  
+ \noindent \textbf{Задача 1}
+\begin{center} 
+\textit{Пусть $\alpha$   комплексный корень многочлена $x^3 - 3x + 1$. Представьте элемент
+$$\frac{\alpha^4 -\alpha^3 +4\alpha+3}{\alpha^4 +\alpha^3 -2\alpha^2 +1}\in \mathbb{Q}(\alpha)$$
+ в виде  $f (\alpha)$, где $f (x) \in \mathbb{Q}[x]$ и $deg f (x) \leq2$.}
+\end{center}
+Из того, что $f (\alpha)=0$, заметим, что $\alpha^3-3\alpha+1=0$. Повыражаем разные степени $\alpha$ и подставим в искомый элемент:
+$$\alpha^3=3\alpha-1$$
+$$\alpha^4=3\alpha^2-\alpha$$
+$$\frac{\alpha^4 -\alpha^3 +4\alpha+3}{\alpha^4 +\alpha^3 -2\alpha^2 +1}=\frac{3\alpha^2-\alpha-3\alpha+1+4\alpha+3}{3\alpha^2-\alpha+3\alpha-1-2\alpha^2+1}=\frac{3\alpha^2+4}{\alpha^2+2\alpha}$$
+Найдем такой элемент, который при умножении на $(\alpha^2+2\alpha)$ будет давать 1. Сделать это можно с помощью метода неопределенных коэффициентов:
+$$1=(\alpha^2+2\alpha)(A\alpha^2+B\alpha+C)+(\alpha^3-3\alpha+1)(D\alpha^2+E\alpha+F)=$$$$=D\alpha^5+(A+E)\alpha^4+(2A+B+F-3D)\alpha^3+(2B+C+D-3E)\alpha^2+(2C+E-3F)\alpha + F$$
+Решая систему уравнений на эти коэффициенты получаем многочлен: $-\alpha^2+\alpha+1$
+Тогда:
+$$\frac{3\alpha^2+4}{\alpha^2+2\alpha}=(3\alpha^2+4)(-\alpha^2+\alpha+1)=-10\alpha^2+16\alpha+1$$
+\newline
+\newline
+\textbf{Задача 2}
+\begin{center}
+\textit{Найдите минимальный многочлен для числа $\sqrt{3} - \sqrt{5}$ над Q.}
+\end{center}
+Возьмем многочлен, корнем которого будет $\sqrt{3} - \sqrt{5}$:
+$$x=\sqrt{3} - \sqrt{5}$$
+$$x^2=8-2\sqrt{15};~~~~~ x^2-8=-2\sqrt{15}$$
+$$x^4-16x^2+4=0$$
+$$(x-\sqrt{3} + \sqrt{5})(x+\sqrt{3} - \sqrt{5})(x-\sqrt{3} - \sqrt{5})(x+\sqrt{3} + \sqrt{5})=x^4-16x^2+4$$
+Заметим, что данный многочлен является неприводимым над $Q$ (т.е. не разлагается на множители над Q и является простым элементом кольца). А это значит, что он и будет минимальным (меньшей степени быть не может из выше сказанного ).
+\newpage
+\textbf{Задача 3}
+\begin{center}
+\textit{Пусть $F$   подполе в $\mathbb{C}$, полученное присоединением к $\mathbb{Q}$ всех комплексных корней многочлена
+$x^4 + x^2 + 1$ (то есть F --- наименьшее подполе в $\mathbb{C}$, содержащее $\mathbb{Q}$ и все корни этого многочлена). Найдите степень расширения [F : $\mathbb{Q}$].} 
+\end{center}
+Запишем корни многочлена $x^4 + x^2 + 1$:
+$$x_{1,2}=\pm\sqrt[3]{-1};~~~x_{3,4}=\pm(-1)^{2/3}$$
+Несложно заметить, что все корни лежат в поле $Q[\sqrt[3]{-1}]$. Из этого следует, что степень расширения не более 2. Кроме того, используем тот факт, что $\sqrt[3]{-1}$ - нельзя представить в Q, из этого следует, что степень не менее 2. (Интересный факт, что именно так обосновываются комплексные числа (классы вычетов по модулю $x^2+1$ многочленов $R[x]$) - это просто так:))
+\newline
+\newline
+ \noindent \textbf{Задача 4}
+\begin{center}
+\textit{Пусть F = $\mathbb{C}(x)$   поле рациональных дробей и $K = \mathbb{C}(y)$, где y = x + 1/x. Найдите степень расширения [F : K].}
+\end{center}
+$ xy = x(x + 1/x) \Rightarrow x^2-xy+1=0$,  где х будет корнем данного уравнения над $\mathbb{C}(y)$. Осталось проверить будет ли лежать этот х в $\mathbb{C}(y)$. (Если он н будет там лежать, тогда степень расширения будет равна 2)\\
+Решим квадратное уравнение относительно х.
+$$x=\frac{1\pm \sqrt{y^2-4}}{2}$$
+ Этот многочлен является неприводимым, тогда степень расширения будет равна 2
+ 
+
+\end{document}
+
+
+
